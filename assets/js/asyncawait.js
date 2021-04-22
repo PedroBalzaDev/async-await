@@ -1,13 +1,4 @@
 //Promise .then
-// const randomImage = response => {
-//     console.log("Random", response)
-
-//     if (response.status >= 200 && response.status < 300) {
-//         return Promise.resolve(response)
-//     }
-//     return Promise.reject(new Error(response.statusText))
-// }
-
 const getDataWithPromises = (url) => {
     fetch(url)
     .then(status)
@@ -23,9 +14,9 @@ const getDataWithPromises = (url) => {
 getDataWithPromises('https://picsum.photos/v2/list?page=2&limit=15');
 
 //Async/Await
-const randomImageAA = async () => {
+const randomImageAA = async (url) => {
     try {
-        const response = await fetch('https://picsum.photos/v2/list?page=2&limit=15')
+        const response = await fetch(url)
         const imagenes = await response.json()
         return imagenes
     } catch (error) {
@@ -33,7 +24,7 @@ const randomImageAA = async () => {
     }
 }
 const img = async () => {
-    const imgRandom = await randomImageAA()
+    const imgRandom = await randomImageAA('https://picsum.photos/v2/list?page=2&limit=15')
     imgRandom.map((posActual)=>{
     
     const { download_url } = posActual;
