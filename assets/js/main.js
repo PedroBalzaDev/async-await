@@ -12,13 +12,15 @@ const isItDoneYet = new Promise((resolve, reject) => {
 const checkIfItsDone = () => {
     isItDoneYet
         .then((ok) => {
-          //  console.log('La promesa se completo', ok)
+            console.log('La promesa se completo', ok)
         })
         .catch((err) => {
-          //  console.log('La promesa tuvo un error', err)
+            console.log('La promesa tuvo un error', err)
         })
 }
 checkIfItsDone()
+
+
 //OTRO EJEMPLO de GET
 //2)
 const status = response => {
@@ -38,6 +40,8 @@ fetch('https://prog-3-leads-api-rest.vercel.app/leads')
     .catch(error => {
        // console.log('Request failed', error)
     })
+
+    
 //Ejemplo de POST
 //3)
 const options = {
@@ -70,6 +74,8 @@ fetch('https://prog-3-leads-api-rest.vercel.app/leads', optionsJSON)
     .catch(err => {
        // console.error('Request failed', err)
     })
+
+
 //Ejemplo Async/Await
 const doSomethingAsync = () => {
     return new Promise(resolve => {
