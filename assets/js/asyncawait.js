@@ -7,8 +7,9 @@ const randomImage = response => {
     }
     return Promise.reject(new Error(response.statusText))
 }
-const imagen = response => response.json()
-fetch('https://picsum.photos/v2/list?page=2&limit=15')
+
+const getDataWithPromises = (url) => {
+    fetch(url)
     .then(status)
     .then(response => response.json())
     .then(data => {
@@ -17,6 +18,9 @@ fetch('https://picsum.photos/v2/list?page=2&limit=15')
     .catch(error => {
         console.log('Request failed', error)
     })
+}
+
+getDataWithPromises('https://picsum.photos/v2/list?page=2&limit=15');
 
 //Async/Await
 const randomImageAA = async () => {
