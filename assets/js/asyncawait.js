@@ -34,9 +34,9 @@ const img = async () => {
             document.querySelector('#content').appendChild(img);
 
     })
-    console.log('Random image Async/Await', imgRandom)
+    return imgRandom;
 }
-img()
+img().then( result => console.log('Random image Async/Await',result))
 
 
 
