@@ -12,10 +12,10 @@ const isItDoneYet = new Promise((resolve, reject) => {
 const checkIfItsDone = () => {
     isItDoneYet
         .then((ok) => {
-            console.log('La promesa se completo', ok)
+            //console.log('La promesa se completo', ok)
         })
         .catch((err) => {
-            console.log('La promesa tuvo un error', err)
+            // console.log('La promesa tuvo un error', err)
         })
 }
 checkIfItsDone()
@@ -24,7 +24,7 @@ checkIfItsDone()
 //OTRO EJEMPLO de GET
 //2)
 const status = response => {
-    console.log("el reponse es", response)
+    //console.log("el reponse es", response)
     if (response.status >= 200 && response.status < 300) {
         return Promise.resolve(response)
     }
@@ -41,7 +41,7 @@ fetch('https://prog-3-leads-api-rest.vercel.app/leads')
        // console.log('Request failed', error)
     })
 
-    
+
 //Ejemplo de POST
 //3)
 const options = {
@@ -94,6 +94,7 @@ const getUsers = async () => {
     const users = await response.json()
     return users
 }
+
 //Otro ejemplo con Try/Catch
 const getUsersTry = async () => {
     try {
@@ -101,11 +102,11 @@ const getUsersTry = async () => {
         const users = await response.json()
         return users
     } catch (error) {
-        console.log('Hubo un error',error)
+        // console.log('Hubo un error',error)
     }
 }
 const mainLogic = async () => {
     const users = await getUsersTry()
-    console.log('los usuarios son', users)
+    // console.log('los usuarios son', users)
 }
 mainLogic()

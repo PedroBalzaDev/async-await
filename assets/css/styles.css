@@ -1,2 +1,10 @@
 body{background-color:#fff;color:#fff;}
 #loader{display:none;}
+
+#content{
+    overflow: hidden;
+}
+.img{
+    max-width: 150px;
+    float: left;
+}
